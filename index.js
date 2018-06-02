@@ -1,4 +1,5 @@
 var Metalsmith  = require('metalsmith');
+var collections = require('metalsmith-collections');
 var markdown    = require('metalsmith-markdown');
 var layouts     = require('metalsmith-layouts');
 var permalinks  = require('metalsmith-permalinks');
@@ -14,11 +15,17 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
+  .use(collections({
+    instruments: {
+      pattern: 'instruments/*.md',
+    },
+  }))
   .use(markdown())
   .use(permalinks())
   .use(layouts({
     engine: 'handlebars'
   }))
+  
   .use(assets({
     source: './src/assets',
     destination: './assets'

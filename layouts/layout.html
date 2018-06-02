@@ -7,9 +7,17 @@
   </head>
 
   <body>
-   <h1>Deze pagina wordt goed gerenderd!</h1>
+    <h1>Lijst van meetinstrumenten:</h1>
 
-   {{{ contents }}}
+    <table>
+      {{#each instruments }}
+        <tr>
+          <td><b>{{ title }}</b></td>
+          <td>{{{ contents }}}</span></td>
+        </tr>
+      {{/each}}
+    </table>
+
   </body>
 
 </html>

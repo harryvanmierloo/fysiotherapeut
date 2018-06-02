@@ -2,19 +2,21 @@
 
 module.exports = (dato, root, i18n) => {
 
-  // inside a "src/articles" directory...
-  root.createPost(
-    "src/index.md", "yaml", {
-      frontmatter: { 
-        layout: "layout.html",
-        page_title: dato.homePage.pageTitle,
-        avatar: dato.homePage.avatar.url({
-          w: 320
-        }),
-        section_title: dato.homePage.sectionTitle,
-        linkedin_link: dato.homePage.linkedinLink,
-      },
-      content: dato.homePage.description
-    }
-  );
+  // inside a "src/instruments" directory...
+  root.directory("src/instruments", (instrumentsDir) => {
+
+    // ...iterate over the "Instrument" records...
+    dato.instruments.forEach((instrument) => {
+
+      // ...and create a markdown file for each instrument!
+      instrumentsDir.createPost(
+        `${instrument.slug}.md`, "yaml", {
+          frontmatter: { 
+            title: instrument.title,
+          },
+          content: instrument.description
+        }
+      );
+    });
+  });
 };
