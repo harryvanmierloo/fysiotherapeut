@@ -9,14 +9,19 @@
   <body>
     <h1>Lijst van meetinstrumenten:</h1>
 
-    <table>
+    <ul class="instruments">
       {{#each instruments }}
-        <tr>
-          <td><b>{{ title }}</b></td>
-          <td>{{{ contents }}}</td>
-        </tr>
+        <li class="instrument">
+          <h2>{{ title }}</h2>
+          <p>{{{ contents }}}</p>
+          <ol class="open-questions">
+          {{#each open_questions }}
+            <li class="open-question"><label>{{ question }}</label><input type="text"></li>
+          {{/each}}
+          </ol>
+        </li>
       {{/each}}
-    </table>
+    </ul>
 
   </body>
 

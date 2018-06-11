@@ -13,10 +13,13 @@ module.exports = (dato, root, i18n) => {
         `${instrument.slug}.md`, "yaml", {
           frontmatter: { 
             title: instrument.title,
+            open_questions: instrument.openQuestions.toMap()
           },
           content: instrument.description
         }
       );
     });
+
+    //console.log(dato.instruments[0]);
   });
 };

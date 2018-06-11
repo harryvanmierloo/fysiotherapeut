@@ -33,6 +33,11 @@ img {
   width: 100%;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 table {
   border: 1px solid black;
   border-collapse: collapse;
@@ -47,42 +52,25 @@ td {
   padding: 10px;
 }
 
-.container {
-  background-color: #fff;
-  max-width: 320px;
-  margin: 10% auto;
-  padding-bottom: 20px;
-  text-align: center;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.25);
-  box-shadow: 0 0 5px 0 rgba(0,0,0,.25);
-}
-
-.content {
-  padding: 20px;
-}
-
-.content p {
-  margin: 20px auto 40px;
-}
-
-.title {
+.instrument {
+  border: 1px solid black;
   display: block;
-  font-weight: 300;
-  font-size: 50px;
-  color: #000;
-  letter-spacing: 1px;
+  margin-top: 2rem;
+  padding: 1rem;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.open-questions {
+  margin: 1rem 0;
 }
 
-.links {
-  margin-top: 20px;
+.open-question {
+  margin-bottom: 0.5rem;
+}
+
+.open-question label {
+  display: inline-block;
+  padding-right: 1rem;
+  width: 200px;
 }
 
 .button--blue {
